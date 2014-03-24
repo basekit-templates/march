@@ -1,0 +1,155 @@
+{
+	"name":"March",
+	"thumbnail":"march.png",
+	"screenshot":"march.png",
+	"pageTypes": [
+		"default",
+		"bloglistposts",
+		"blogpost",
+		"home",
+		"about",
+		"contact",
+		"gallery",
+		"menu"
+	],
+	"tags": {
+	    "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
+	    "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
+	    "br": ["minimalista", "limpo", "fotografia", "vintage", "moderno", "escuro", "estúdio", "website", "criativo", "elegante", "profissional", "único", "mídia", "sans-serif"]
+	},
+	"colorSwatches": {
+        "Swatch 1": {
+            "color1":"#fa6444",
+            "color2":"#ffffff",
+            "color3":"#cd3f27",
+            "color4":"#ffffff",
+            "color5":"#ffffff",
+            "color6":"#ffffff",
+            "color7":"#cd3f27"
+        },
+        "Swatch 2": {
+            "color1":"#ffffff",
+            "color2":"#6ba47b",
+            "color3":"#6ba47b",
+            "color4":"#3d3247",
+            "color5":"#222222",
+            "color6":"#6ba47b",
+            "color7":"#6ba47b"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#cfa531",
+            "color3":"#cfa531",
+            "color4":"#4f3f13",
+            "color5":"#221b08",
+            "color6":"#d5b04a",
+            "color7":"#d5b04a"
+        },
+        "Swatch 4": {
+            "color1":"#ffffff",
+            "color2":"#a06678",
+            "color3":"#a06678",
+            "color4":"#2c412a",
+            "color5":"#1a1a1a",
+            "color6":"#634dd7",
+            "color7":"#634dd7"
+        },
+        "Swatch 5": {
+            "color1":"#ffffff",
+            "color2":"#559695",
+            "color3":"#559695",
+            "color4":"#2c1326",
+            "color5":"#010101",
+            "color6":"#8cd33a",
+            "color7":"#8cd33a"
+        }
+    },
+    "fontSwatch": {
+       "title": "Vampiro One / Montserrat",
+        "font1": {
+            "font-family": "\"Vampiro One\", Courier New, serif",
+            "font-size": "24px",
+            "font-weight": "600",
+            "line-height": "38px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font2": {
+            "font-family": "\"Vampiro One\", Courier New, serif",
+            "font-size": "28px",
+            "font-weight": "600",
+            "line-height": "38px",
+            "color": "@color-swatch2",
+            "letter-spacing": "inherit"
+        },
+        "font3": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "24px",
+            "font-weight": "600",
+            "line-height": "34px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font4": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "16px",
+            "font-weight": "400",
+            "line-height": "26px",
+            "color": "@color-swatch2",
+            "letter-spacing": "inherit"
+        },
+        "font5": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "14px",
+            "font-weight": "400",
+            "line-height": "28px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font6": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "14px",
+            "font-weight": "400",
+            "line-height": "28px",
+            "color": "@color-swatch6",
+            "letter-spacing": "inherit",
+            "color-hover": "darken(@color-swatch2, 30%)",
+            "background-color": "@color-swatch1",
+            "background-color-hover": "@color-swatch1"
+         },
+        "font7": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "14px",
+            "font-weight": "normal",
+            "line-height": "24px",
+            "color": "@color-swatch2",
+            "letter-spacing": "inherit",
+            "background-color": "@color-swatch1",
+            "background-color-hover": "@color-swatch1"
+        },
+        "font8": {
+            "font-family": "\"Vampiro One\", Courier New, serif",
+            "font-size": "42px",
+            "font-weight": "500",
+            "line-height": "52px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit"
+        },
+        "font9": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "14px",
+            "font-weight": "600",
+            "line-height": "28px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit"
+        },
+        "font10": {
+            "font-family": "\"Vampiro One\", Courier New, serif",
+            "font-size": "42px",
+            "font-weight": "400",
+            "line-height": "52px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<aside class="template-header">
+	<div class="header-feature">
+		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+	</div>
+	<nav class="template-nav">
+		{{widget('extendednavigation', 'navigationheader', {})|raw}}
+	</nav>
+	<div class="header-bottom">
+		{{widget('profile', 'footercolumn1profilesocialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+	</div>
+</aside>
