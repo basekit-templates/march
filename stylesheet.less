@@ -109,12 +109,14 @@ h2 {
 	line-height:@font-swatch2-line-height; 
 	letter-spacing: @font-swatch2-letter-spacing; 
 	font-size: @font-swatch2-font-size;
+	text-shadow: 0 5px 0 @color-swatch3;
 	a {
 		font-family:@font-swatch2-font-family; 
 		font-weight: @font-swatch2-font-weight; 
 		line-height:@font-swatch2-line-height; 
 		letter-spacing: @font-swatch2-letter-spacing; 
 		font-size: @font-swatch2-font-size;
+		text-shadow: 0 5px 0 @color-swatch3;
 	}
 }
 
@@ -199,8 +201,8 @@ blockquote {
 	font-style: italic;
 	font-size: bkscale(@font-swatch5-font-size, 1.2);
 	line-height: bkscale(@font-swatch5-line-height, 1.2);
-	background: lighten(@color-swatch2, 50%);
-	border-radius: 2px;
+	background-color: @color-swatch3;
+	text-shadow: 0 1px 0 darken(@color-swatch3, 5%);
 	&:before {
 		left: 8px;
 		color: @color-swatch2;
@@ -214,14 +216,20 @@ a,
 	color: @color-swatch2;
 	text-decoration: none;
 	&:hover {
-		color: darken(@color-swatch2, 30%);
 		text-decoration: none;
 	}
 }
 
 .main {
 	clear: both;
-	padding: 0 40px;
+	padding: 0 20px;
+	text-shadow: 0 1px 0 darken(@color-swatch1, 10%);
+	.blog-post-date, a {
+		border-bottom: 1px solid fadeout(@color-swatch2, 50%);
+		&:hover {
+			border-bottom-color: @color-swatch2;
+		}
+	}
 	h1, h2, h3, h4, h5 ,h6 {
 		a {
 			text-decoration: none;
@@ -234,6 +242,7 @@ a,
 	float: left;
 	width: 70%;
 	min-height: 100%;
+	margin-top: 40px;
 }
 
 hr.line {
@@ -243,14 +252,13 @@ hr.line {
 // 2. Header
 .template-header {
 	position: relative;
-	padding: 40px;
+	margin-top: 40px;
 	text-align: right;
 	float: left;
 	left: 0;
 	height: 100%;
 	width: 30%;
 	color: @color-swatch1;
-	text-shadow: 0 1px 2px fadeout(@color-swatch4, 40%);
 	.widget.companyname a {
 		color: @color-swatch1;
 	}
@@ -265,12 +273,14 @@ hr.line {
 	.widget.profile .bk-profile-socialicons span a {
 		background-color: transparent;
 		border: none;
-		-webkit-filter: drop-shadow(0 0 2px fadeout(@color-swatch4, 30%));
+		-webkit-filter: drop-shadow(0 0 2px fadeout(@color-swatch1, 30%));
 		-webkit-transition: .2s;
+		text-indent: 500px;
+		overflow: hidden;
 		&:hover {
 			background-color: transparent;
 			border: none;
-			-webkit-filter: drop-shadow(0 0 2px fadeout(@color-swatch1, 30%));
+			-webkit-filter: drop-shadow(0 0 2px fadeout(@color-swatch2, 30%));
 		}
 	}
 	&:after {
@@ -305,6 +315,7 @@ hr.line {
 	position: relative;
 	overflow: hidden;
 	padding-bottom: 15px;
+	padding-right: 20px;
 }
 .widget.feature h2 {
 	padding-bottom: 0;
@@ -345,16 +356,37 @@ hr.line {
 .template-nav {
 	background-color: @color-swatch1;
 	min-height: 49px;
+	position: relative;
+	&:before, &:after {
+		display: block;
+		content: "";
+		position: absolute;
+		top: -15px;
+		right: 0;
+		height: 0;
+		width: 0;
+		border-width: 10px;
+		border-color: transparent;
+		border-right-color: @color-swatch2;
+		border-style: solid;
+		z-index: 2;
+	}
+	&:after {
+		border-right-color: @color-swatch1;
+		right: -1px;
+	}
 }
 
 .widget .extendednavigation {
-	margin: 0 20px;
+	position: relative;
+	z-index: 1;
 }
 
 .widget .extendednavigation ul {
 	float: none;
+	text-align: right;
 	margin-bottom: 12px;
-	li {
+	li, &.align-left li {
 		float: none;
 		text-align: right;
 		a, > .text {
@@ -367,28 +399,47 @@ hr.line {
 			font-size: @font-swatch6-font-size;
 			&:hover {
 				color: @font-swatch6-color-hover;
+				text-shadow: 0 0 8px darken(@color-swatch1, 20%);
 			}
 		}
 	}
-	li.folder:after {
-		right: 6px;
-		top: 46%;
-		border-top-color: @font-swatch6-color;
+	li.folder {
+		margin-right: 0;
+		margin-left: 10px;
+		position: relative;
+		&:before, &:after {
+			display: block;
+			content: "";
+			position: absolute;
+			right: -19px;
+			top: 28%;
+			height: 0;
+			width: 0;
+			border-width: 10px;
+			border-color: transparent;
+			border-left-color: @color-swatch2;
+			border-style: solid;
+			z-index: 2;
+		}
+		&:after {
+			border-left-color: @color-swatch1;
+			right: -18px;
+		}
 	}
 	li.folder:hover {
 		ul {
+			background-color: darken(@color-swatch1, 3%);
 			min-width: 150px;
-			left: 0px;
-			top: 45px;
+			left: 100%;
+			top: 0;
+			padding-left: 1px;
+			z-index: 1;
 		}
 		a {
 			padding: 10px 20px;
 			&:hover {
 				color:@color-swatch2;
 			}
-		}
-		&:after {
-			border-top-color: @color-swatch4;
 		}
 	}
 }
@@ -444,15 +495,14 @@ hr.line {
 	clear: both;
 }
 
-.menu-subsection .menu-subsection-promoted .menu-items,
-.menu-item-promoted {
-	border: 1px solid lighten(@color-swatch2, 30%);
-	border-radius: 2px;
+.menu-subsection .menu-subsection-promoted .menu-items {
+	border: 1px solid darken(@color-swatch3, 10%);
 }
 
-.menu-subsection-wrapper .menu-items {
-	background: lighten(@color-swatch2, 45%);
-	border-radius: 2px;
+.menu-subsection-wrapper .menu-items,
+.menu-item-promoted {
+	background-color: lighten(@color-swatch3, 5%);
+	text-shadow: 0 1px 0 darken(@color-swatch3, 5%);
 }
 
 .menu-item {
@@ -468,7 +518,7 @@ hr.line {
 	p {
 		font-family:@font-swatch6-font-family;
 		font-size: bkscale(@font-swatch6-font-size, 0.9);
-		color: darken(@color-swatch5, 30%);
+		color: @color-swatch2;
 		font-weight:@font-swatch6-font-weight;
 		letter-spacing:@font-swatch6-letter-spacing;
 	}
@@ -501,12 +551,17 @@ hr.line {
 
 .menu .menu-section-item-dietary-props .dietary-icon,
 .menu .menu-info .dietary-icon {
-	padding: 1px 5px 1px 0;
+	padding: 1px 5px 1px 18px;
+	position: relative;
 	&:before, &:after {
 		color: @color-swatch2;
 	}
 	&:before {
-		content: "\2605";
+		font-size: bkscale(@font-swatch5-font-size, 1.2);
+		content: "\272A";
+		top: 2px;
+		position: absolute;
+		left: 0;
 	}
 }
 
@@ -523,7 +578,7 @@ hr.line {
 		margin: 0;
 	}
 	a {
-		padding: 10px 25px 11px;
+		margin: 10px 25px 11px;
 		font-family:@font-swatch6-font-family;
 		font-weight: @font-swatch6-font-weight;
 		color:@font-swatch6-color;
@@ -537,8 +592,7 @@ hr.line {
 }
 
 // 6. Blog List
-.widget.bloglistposts,
-.blogpost-page .blog-post-item {
+.widget.bloglistposts {
 	padding: 20px 0;
 }
 
@@ -550,87 +604,30 @@ hr.line {
 }
 
 .blog-post-item {
-	padding-bottom: 40px;
-	padding-top: 10px;
+	background-color: lighten(@color-swatch3, 5%);
+	padding: 30px;
+	padding-top: 25px;
 	clear: both;
 }
 
 .blog-post-list .blog-post-item {
-	text-shadow: 0 0 8px @color-swatch1;
 	position: relative;
-	margin-bottom: 40px;
-	> * {
-		position: relative;
-		z-index: 1;
-		max-width: 600px;
-		margin-right: 50%;
-	}
+	margin-bottom: 20px;
 } 
 
 .blog-post-list .blog-post-feature-image-wrap {
-	background-image: image('/images/dark.jpg');
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	height: 100%;
-	width: 65%;
-	margin-left: -5%;
-	margin-right: -40px;
+	max-width: 50%;
+	margin: 0 0  20px 20px;
 	float: right;
 	z-index: 0;
-	&:after {
-		display: block;
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: -moz-linear-gradient(left, fadeout(@color-swatch1, 0%) 0%, fadeout(@color-swatch1, 100%) 65%, fadeout(@color-swatch1, 100%) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, right top, color-stop(0%,fadeout(@color-swatch1, 0%)), color-stop(65%,fadeout(@color-swatch1, 100%)), color-stop(100%,fadeout(@color-swatch1, 100%))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(left, fadeout(@color-swatch1, 0%) 0%,fadeout(@color-swatch1, 100%) 65%,fadeout(@color-swatch1, 100%) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(left, fadeout(@color-swatch1, 0%) 0%,fadeout(@color-swatch1, 100%) 65%,fadeout(@color-swatch1, 100%) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(left, fadeout(@color-swatch1, 0%) 0%,fadeout(@color-swatch1, 100%) 65%,fadeout(@color-swatch1, 100%) 100%); /* IE10+ */
-		background: linear-gradient(to right, fadeout(@color-swatch1, 0%) 0%,fadeout(@color-swatch1, 100%) 65%,fadeout(@color-swatch1, 100%) 100%); /* W3C */
-	}
-}
-
-.widget.blogsearch {
-	width: 40%;
-	float: left;
-	padding-right: 40px;
-	text-align: right;
-	label {
-		height: 0;
-		text-indent: -200px;
-		overflow: hidden;
-		padding-top: 0;
-	}
-	input[type=search], input[type=search]:focus {
-		width: 87%;
-		border-radius: 0;
-		border: none;
-		border-bottom: 1px solid darken(@color-swatch1, 10%);
-		padding: 0;
-		padding-top: 8px;
-	}
-	button, button:hover {
-		width: 13%;
-		border-radius: 0;
-		text-indent: -200px;
-		border: none;
-		background-size: 18px 18px;
-		background-position: right center;
-		background-repeat: no-repeat;
-		padding: 2px 12px;
-		border-bottom: 1px solid darken(@color-swatch1, 10%);
-	}
+	border: 1px solid @color-swatch2;
+	box-shadow:inset 0 0 0 4px fadeout(@color-swatch2, 50%);
+	height: 300px;
 }
 
 // 7. Blog Post
 .main .blog-post-metadata {
-	border-top: 1px solid darken(@color-swatch1, 10%);
+	border-top: 1px solid @color-swatch3;
 }
 .main .blog-post-metadata, .main .blog-post-date {
 	margin-top: 20px;
@@ -639,12 +636,6 @@ hr.line {
 	color: lighten(@font-swatch5-color, 20%);
 	time, p {
 		color: lighten(@font-swatch5-color, 20%);
-	}
-}
-
-.main .blog-post-date {
-	&:hover {
-		text-decoration: underline;
 	}
 }
 
@@ -669,14 +660,14 @@ input[type=search],
 textarea {
 	text-indent: 0;
 	height: auto;
-	background: @color-swatch1;
-	border: 1px solid darken(@color-swatch1, 10%);
+	background: lighten(@color-swatch3, 3%);
+	border: 1px solid @color-swatch3;
 	line-height:@font-swatch5-line-height;
 	font-size:@font-swatch5-font-size;
 	padding: 6px 10px;
-	border-radius: 2px;
 	&:focus {
-		border-color: darken(@color-swatch1, 15%);
+		background-color: @color-swatch3;
+		border: 1px solid @color-swatch3;
 	}	
 }
 
@@ -690,18 +681,32 @@ input[type=search] {
 	width: 91%;
 }
 
+input::-webkit-input-placeholder {
+	color: fadeout(@color-swatch2, 50%);
+}
+input:-moz-placeholder {
+	color: fadeout(@color-swatch2, 50%);
+}
+input::-moz-placeholder {
+	color: fadeout(@color-swatch2, 50%);
+}
+input:-ms-input-placeholder {
+	color: fadeout(@color-swatch2, 50%);
+}
+
 input:focus::-webkit-input-placeholder {
-	color: darken(@color-swatch1, 10%);
+	color: fadeout(@color-swatch2, 75%);
 }
 input:focus:-moz-placeholder {
-	color: darken(@color-swatch1, 10%);
+	color: fadeout(@color-swatch2, 75%);
 }
 input:focus::-moz-placeholder {
-	color: darken(@color-swatch1, 10%);
+	color: fadeout(@color-swatch2, 75%);
 }
 input:focus:-ms-input-placeholder {
-	color: darken(@color-swatch1, 10%);
+	color: fadeout(@color-swatch2, 75%);
 }
+
 
 .contactform button.btn,
 button.btn,
@@ -716,17 +721,16 @@ button.btn,
 .widget.profile .bk-profile-socialicons span a,
 .template-footer .widget.profile .bk-profile-socialicons span a {
 	-webkit-font-smoothing: inherit;
-	border: 1px solid @font-swatch7-color;
+	border: none;
 	color: @font-swatch7-color;
 	background-color: @font-swatch7-background-color;
 	line-height: @font-swatch7-line-height;
 	font-size: @font-swatch7-font-size;
 	font-family: @font-swatch7-font-family;
 	cursor: pointer;
-	border-radius: 2px;
+	padding: 8px 18px;
+	text-shadow: none;
 	&:hover {
-		border-color: darken(@color-swatch2, 20%);
-		color: darken(@font-swatch7-color, 20%);
 		background-color: @font-swatch7-background-color-hover;
 	}
 }
@@ -735,13 +739,14 @@ button.btn,
 .widget.profile .bk-profile-socialicons span a,
 .template-footer .widget.profile .bk-profile-socialicons span a	{
 	border-radius: 100%;
+	padding: 0;
 }
 
 .clicktocall a,
 .blog-search-form button,
 .widget.profile form button,
 .signupform fieldset button {
-	padding: 8px 14px;
+	padding: 9px 18px;
 	margin: 0;
 }
 
@@ -753,9 +758,24 @@ input[type="search"]::-webkit-search-decoration {
 	display: inline-block;
 }
 
+.widget.paypalbuynow .widget.button.paypal,
+.dropbox button.btn {
+	padding-left: 39px;
+}
+
+.widget.tweet a {
+	padding: 11px 18px 11px 39px;
+}
+
 // 9. Gallery / Images / Slideshow
 .widget.gallery {
 	margin: 0;
+	a {
+		border: 1px solid fadeout(@color-swatch2, 50%);
+		&:hover {
+			border-color: @color-swatch2;
+		}
+	}
 }
 
 .widget.responsiveslideshow .slideshow-widget {
@@ -771,28 +791,27 @@ input[type="search"]::-webkit-search-decoration {
 			display: block;
 			border: 5px solid transparent;
 			position: absolute;
-			top: 8px;
+			top: 10px;
 			left: 11px;
 			width: 0;
 			height: 0;
 		}
 	}
 	.btn-next:before {
-		border-left-color: @color-swatch1;
-		left: 11px;
+		border-left-color: @color-swatch2;
+		left: 13px;
 	}
 	.btn-prev:before {
-		border-right-color: @color-swatch1;
-		left: 5px;
+		border-right-color: @color-swatch2;
+		left: 6px;
 	}
 }
 
 .widget.responsiveslideshow .slideshow-widget .btn-prev,
 .widget.responsiveslideshow .slideshow-widget .btn-next,
 .widget.responsiveslideshow .slideshow-widget .btn-play {
-	border: 2px solid fadeout(@color-swatch2, 50%);
+	background-color: fadeout(@color-swatch1, 30%);
 	border-radius: 100%;
-	background: none;
 }
 
 .widget.responsiveslideshow {
@@ -813,6 +832,7 @@ input[type="search"]::-webkit-search-decoration {
 	}
 	.content-wrapper {
 		background: fadeout(@color-swatch1, 50%);
+		text-shadow: none;
 		.title {
 			font-weight: @font-swatch3-font-weight;
 			&:after {
@@ -838,7 +858,7 @@ input[type="search"]::-webkit-search-decoration {
 	background-color: transparent;
 	&.selected {
 		border: 1px solid @font-swatch7-color;
-		background: fadeout(@color-swatch2, 50%);
+		background: @color-swatch2;
 		box-shadow: inset 0 0 0 3px @color-swatch1;
 	}
 }
@@ -848,13 +868,13 @@ input[type="search"]::-webkit-search-decoration {
 	&:before, &:after {
 		width: 8px;
 		height: 26px;
-		background: @color-swatch1;
+		background: @color-swatch2;
 		border: 0;
-		top: 34%;
+		top: 27px;
 		left: 28px;
 	}
 	&:after {
-		left: 40px;
+		left: 42px;
 	}
 }
 
@@ -873,11 +893,16 @@ input[type="search"]::-webkit-search-decoration {
 		width: 0;
 		height: 0;
 		border: 20px solid transparent;
-		border-left-color: @color-swatch1;
+		border-left-color: @color-swatch2;
 		left: 32px;
-		top: 30%;
+		top: 31%;
 		border-top-width: 15px;
 		border-bottom-width: 15px;
+	}
+	&:hover {
+		&:before, &:after {
+			top: 31%;
+		}
 	}
 }
 
@@ -899,7 +924,7 @@ input[type="search"]::-webkit-search-decoration {
 
 // 10. Footer
 .template-footer {
-	padding: 30px 40px 40px;
+	padding: 30px 20px 40px;
 	max-width: 1040px;
 	clear: both;
 	color: lighten(@font-swatch5-color, 20%);
@@ -914,6 +939,9 @@ input[type="search"]::-webkit-search-decoration {
 // 11. Misc
 .twitter ul li time {
 	color: lighten(@font-swatch5-color, 20%);
+}
+.twitter-profile-pic a {
+	border: none;
 }
 
 
@@ -943,6 +971,12 @@ input[type="search"]::-webkit-search-decoration {
 	.template-header .template-aside {
 		display: none;
 	}
+	.template-header .widget.profile {
+		text-align: left;
+		padding-left: 14px;
+		position: absolute;
+		top: 0;
+	}
 	.widget.logo {
 		float: none;
 		width: auto;
@@ -968,6 +1002,11 @@ input[type="search"]::-webkit-search-decoration {
 			padding: 20px 0 0 0;
 		}
 	}
+	.template-nav:before,
+	.template-nav:after,
+	.template-header:after {
+		display: none;
+	}
 	.widget .extendednavigation {
 		border-bottom: none;
 	}
@@ -977,7 +1016,8 @@ input[type="search"]::-webkit-search-decoration {
 	.widget .extendednavigation ul li,
 	.widget .extendednavigation ul.align-left li {
 		padding: 0;
-		border-bottom: 1px solid darken(@color-swatch1, 15%);
+		text-align: left;
+		border-bottom: 1px solid fadeout(@color-swatch2, 50%);
 	}
 	.widget .extendednavigation ul li.folder:hover ul {
 		left: 0;
@@ -985,6 +1025,19 @@ input[type="search"]::-webkit-search-decoration {
 	}
 	.widget .extendednavigation ul li.folder {
 		margin-right: 0;
+		margin-left: 0;
+		&:before, &:after {
+			border-left-color: transparent;
+			right: 20px;
+		}
+		&:before {
+			top: 21px;
+			border-top-color: @color-swatch2;
+		}
+		&:after {
+			top: 20px;
+			border-top-color: @color-swatch1;
+		}
 	}
 	.template-nav {
 		float: none;
@@ -1000,19 +1053,10 @@ input[type="search"]::-webkit-search-decoration {
 	.widget .extendednavigation ul li a,
 	.widget .extendednavigation ul li > .text,
 	.widget .extendednavigation ul li.folder:hover a {
-		padding: 10px 0;
+		padding: 10px 20px;
 	}
 	.widget.responsiveslideshow .description {
 		display: inline-block;
-	}
-	.menu .main, .main {
-		padding: 0 20px;
-	}
-}
-
-@media (max-width: 700px) {
-	body {
-		background-size: 100% auto;
 	}
 	.template-header {
 		position: relative;

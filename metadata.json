@@ -93,7 +93,7 @@
         "font4": {
             "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "16px",
-            "font-weight": "400",
+            "font-weight": "600",
             "line-height": "26px",
             "color": "@color-swatch2",
             "letter-spacing": "inherit"
@@ -113,7 +113,7 @@
             "line-height": "28px",
             "color": "@color-swatch6",
             "letter-spacing": "inherit",
-            "color-hover": "darken(@color-swatch2, 30%)",
+            "color-hover": "@color-swatch2",
             "background-color": "@color-swatch1",
             "background-color-hover": "@color-swatch1"
          },
@@ -124,8 +124,8 @@
             "line-height": "24px",
             "color": "@color-swatch2",
             "letter-spacing": "inherit",
-            "background-color": "@color-swatch1",
-            "background-color-hover": "@color-swatch1"
+            "background-color": "@color-swatch3",
+            "background-color-hover": "darken(@color-swatch3, 5%)"
         },
         "font8": {
             "font-family": "\"Vampiro One\", Courier New, serif",
