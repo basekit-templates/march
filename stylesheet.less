@@ -304,13 +304,6 @@ hr.line {
 	display: block;
 }
 
-.widget.feature .feature-bgimg .content button.btn {
-	background-color: lighten(@color-swatch2, 10%);
-	&:hover {
-		background-color: darken(@color-swatch2, 10%);
-	}
-}
-
 .header-feature {
 	position: relative;
 	overflow: hidden;
@@ -319,6 +312,7 @@ hr.line {
 }
 .widget.feature h2 {
 	padding-bottom: 0;
+	text-shadow: none;
 }
 .widget.feature .feature-bgimg .content h3 {
 	display: inline-block;
@@ -329,6 +323,7 @@ hr.line {
 .widget.feature .feature-bgimg .content {
 	display: block;
 	padding: 75px 40px 0;
+	text-shadow: none;
 }
 
 // 3. Navigation
@@ -971,11 +966,16 @@ input[type="search"]::-webkit-search-decoration {
 	.template-header .template-aside {
 		display: none;
 	}
+	.widget.logo {
+		float: right;
+		width: 40%;
+	}
 	.template-header .widget.profile {
 		text-align: left;
 		padding-left: 14px;
 		position: absolute;
 		top: 0;
+		width: 60%;
 	}
 	.widget.logo {
 		float: none;
