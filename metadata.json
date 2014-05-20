@@ -2,6 +2,7 @@
 	"name":"March",
 	"thumbnail":"march.png",
 	"screenshot":"march.png",
+	"templateType":"blog",
 	"pageTypes": [
 		"default",
 		"blogpostlist",
