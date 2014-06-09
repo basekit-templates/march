@@ -367,10 +367,10 @@ hr.line {
 	text-align: right;
 	margin-bottom: 12px;
 	width: 100%;
-	li, &.align-left li {
+	li {
 		width: 100%;
 		a, > .text {
-			padding: 10px 20px 11px;
+			padding: 10px 20px;
 			font-family:@font-swatch6-font-family;
 			font-weight: @font-swatch6-font-weight;
 			color: @font-swatch6-color;
@@ -415,7 +415,6 @@ hr.line {
 			z-index: 1;
 		}
 		a {
-			padding: 10px 20px;
 			&:hover {
 				color:@color-swatch2;
 			}
@@ -1006,11 +1005,15 @@ input[type="search"]::-webkit-search-decoration {
 	.widget .extendednavigation {
 		border-bottom: none;
 	}
-	.widget .extendednavigation ul li,
-	.widget .extendednavigation ul.align-left li {
-		padding: 0;
-		text-align: left;
+	.widget .extendednavigation ul li {
 		border-bottom: 1px solid fadeout(@color-swatch2, 50%);
+		padding: 0;
+		a, .folder > .text {
+			padding: 10px 50px;
+		}
+	}
+	.widget .extendednavigation > ul li > .text {
+		padding: 10px 50px;
 	}
 	.widget .extendednavigation ul li.folder:hover ul {
 		left: 0;
@@ -1042,11 +1045,6 @@ input[type="search"]::-webkit-search-decoration {
 	.widget .extendednavigation ul li.folder:hover ul {
 		margin: 1px 0 0;
 		border: none;
-	}
-	.widget .extendednavigation ul li a,
-	.widget .extendednavigation ul li > .text,
-	.widget .extendednavigation ul li.folder:hover a {
-		padding: 10px 20px;
 	}
 	.widget.responsiveslideshow .description {
 		display: inline-block;
